@@ -52,6 +52,8 @@ function shuffle(array) {
 
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
-    console.log("item clicked!");
+    console.log(e.target);
+    e.target.classList.add("open");
+    e.target.classList.add("show");
   }
  });
