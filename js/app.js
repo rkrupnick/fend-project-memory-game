@@ -20,7 +20,7 @@ const cards = Array.from(deck);
 shuffle(cardImages);
 
 for (let i=0; i<cards.length; i++) {
-  cards[i].classList.add(cardImages[i]);
+  cards[i].children[0].classList.add(cardImages[i]);
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
