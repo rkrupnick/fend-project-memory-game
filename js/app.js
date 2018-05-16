@@ -49,11 +49,13 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+ const openCards = [];
 
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
-    console.log(e.target);
     e.target.classList.add("open");
     e.target.classList.add("show");
+    openCards.push(e.target.children[0].classList.value);
+    console.log(openCards);
   }
  });
