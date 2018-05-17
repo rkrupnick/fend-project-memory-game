@@ -153,6 +153,7 @@ function checkWin() {
   }
   moveCounter = 0;
   moves.innerText = moveCounter;
+  matchCounter = 0;
   resetStars();
   startGame();
  }
