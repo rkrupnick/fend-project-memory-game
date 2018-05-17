@@ -35,6 +35,9 @@ let moveCounter = 0;
 let matchCounter = 0;
 let numberStars = 3;
 let cardImages = standardImages;
+let seconds = 0;
+let start;
+
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -46,6 +49,7 @@ startGame();
 function startGame() {
   shuffle(cardImages);
   addImagestoCards();
+  start = new Date();
 }
 
 function addImagestoCards() {
@@ -100,9 +104,16 @@ function openCardsMatch() {
  }
 }
 
+function checkTime() {
+  let end = new Date();
+  let time = end - start;
+  seconds = Math.floor(time/1000);
+}
+
 function checkWin() {
   if (matchCounter === 8) {
-    endGame.innerText = `You won! It took you ${moveCounter} turns! You finished with ${numberStars} stars!`;
+    checkTime();
+    endGame.innerText = `You won! It took you ${moveCounter} turns! You finished in ${seconds} seconds, with ${numberStars} stars!`;
     modal.style.display = "block";
   }
 }
