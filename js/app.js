@@ -14,6 +14,7 @@ const deck = document.querySelectorAll(".card");
 const cards = Array.from(deck);
 const moves = document.querySelector(".moves");
 const stars = document.querySelector(".stars");
+const restart = document.querySelector(".restart");
 
 let openCards = [];
 let moveCounter = 0;
@@ -26,10 +27,17 @@ let numberStars = 3;
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-shuffle(cardImages);
+startGame();
 
-for (let i=0; i<cards.length; i++) {
-  cards[i].children[0].classList.add(cardImages[i]);
+function startGame() {
+  shuffle(cardImages);
+  addImagestoCards();
+}
+
+function addImagestoCards() {
+  for (let i=0; i<cards.length; i++) {
+    cards[i].children[0].classList.add(cardImages[i]);
+  }
 }
 
 // Shuffle function from http://stackoverflow.com/a/2450976
@@ -80,7 +88,7 @@ function shuffle(array) {
 
 function checkWin() {
   if (matchCounter === 8) {
-    alert(`You won! It took you ${moveCounter} turns!`);
+    alert(`You won! It took you ${moveCounter} turns! You finished with ${numberStars} stars!`);
   }
 }
 
@@ -124,4 +132,7 @@ function checkWin() {
   }
  });
 
- // 3 stars 20 moves, 2 less than 30
+ restart.addEventListener("click", function() {
+  console.log("restart");
+ })
+
