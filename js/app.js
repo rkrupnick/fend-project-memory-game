@@ -55,11 +55,13 @@ function shuffle(array) {
   if (openCards.length === 2) {
     if (openCards[0].children[0].classList.value === openCards[1].children[0].classList.value) {
       lockMatchedCards(openCards);
-    } else {
+    }  else {
+    setTimeout(function() {
       hideUnmatchedCards();
-    }
+    }, 450)
   }
  }
+}
 
  function lockMatchedCards() {
   openCards[0].classList.add("match");
