@@ -52,11 +52,17 @@ function shuffle(array) {
  let openCards = [];
 
  function openCardsMatch() {
+  if (openCards.length === 2) {
     if (openCards[0].children[0].value === openCards[1].children[0].value) {
-
+      lockMatchedCards(openCards);
     } else {
 
     }
+  }
+ }
+
+ function lockMatchedCards() {
+
  }
 
  document.getElementById("deck").addEventListener("click", function(e) {
@@ -65,8 +71,6 @@ function shuffle(array) {
 
     openCards.unshift(e.target);    // Add clicked card to openCards array
 
-    if (openCards.length % 2 === 0) {
 
-    }
   }
  });
