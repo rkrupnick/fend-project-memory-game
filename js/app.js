@@ -3,7 +3,7 @@
 /*
  * Create a list that holds all of your card images
  */
-const cardImages = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-plane-o",
+const cardImages = ["fa-gem", "fa-gem", "fa-paper-plane", "fa-paper-plane",
   "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf",
   "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
 
