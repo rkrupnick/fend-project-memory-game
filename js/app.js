@@ -16,6 +16,7 @@ const moves = document.querySelector('.moves');
 
 let openCards = [];
 let moveCounter = 0;
+let matchCounter = 0;
 
 /*
  * Display the cards on the page
@@ -65,12 +66,20 @@ function shuffle(array) {
   if (openCards.length === 2) {
     if (openCards[0].children[0].classList.value === openCards[1].children[0].classList.value) {
       lockMatchedCards(openCards);
+      matchCounter += 1;
     }  else {
     setTimeout(function() {
       hideUnmatchedCards();
     }, 750)
   }
+  checkWin();
  }
+}
+
+function checkWin() {
+  if (matchCounter === 8) {
+    alert(`You won! It took you ${moveCounter} turns!`);
+  }
 }
 
  function lockMatchedCards() {
@@ -97,6 +106,5 @@ function shuffle(array) {
     openCards.unshift(e.target);    // Add clicked card to openCards array
     updateMoves();
     openCardsMatch(); // Check if cards Match
-
   }
  });
