@@ -49,13 +49,24 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
- const openCards = [];
+ let openCards = [];
+
+ function openCardsMatch() {
+    if (openCards[0].children[0].value === openCards[1].children[0].value) {
+
+    } else {
+
+    }
+ }
 
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
-    e.target.classList.add("open");
-    e.target.classList.add("show");
-    openCards.push(e.target.children[0].classList.value);
-    console.log(openCards);
+    e.target.classList.add("open", "show"); // Add open and show class to clicked card
+
+    openCards.unshift(e.target);    // Add clicked card to openCards array
+
+    if (openCards.length % 2 === 0) {
+
+    }
   }
  });
