@@ -3,7 +3,7 @@
 /*
  * Create a list that holds all of your card images
  */
-const cardImages = ["fa-gem", "fa-gem", "fa-paper-plane", "fa-paper-plane",
+const standardImages = ["fa-gem", "fa-gem", "fa-paper-plane", "fa-paper-plane",
   "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf",
   "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
 
@@ -20,7 +20,7 @@ let openCards = [];
 let moveCounter = 0;
 let matchCounter = 0;
 let numberStars = 3;
-
+let cardImages = standardImages;
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
