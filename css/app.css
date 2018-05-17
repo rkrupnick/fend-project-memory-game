@@ -172,5 +172,13 @@ h2 {
     cursor: pointer;
 }
 
+.play-again {
+    margin: 15px;
+}
 
+.yes,
+.no {
+    margin: 5px;
+
+}
 
