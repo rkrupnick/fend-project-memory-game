@@ -12,6 +12,10 @@ const cardImages = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-pl
 */
 const deck = document.querySelectorAll('.card');
 const cards = Array.from(deck);
+const moves = document.querySelector('.moves');
+
+let openCards = [];
+let moveCounter = 0;
 
 /*
  * Display the cards on the page
@@ -51,7 +55,7 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
- let openCards = [];
+
 
  function showImage(e) {
   e.target.classList.add("open", "show"); // Add open and show class to clicked card
@@ -82,11 +86,16 @@ function shuffle(array) {
   openCards = [];
  }
 
+ function updateMoves() {
+  moveCounter += 1;
+  moves.innerText = moveCounter;
+ }
+
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     showImage(e);
     openCards.unshift(e.target);    // Add clicked card to openCards array
-
+    updateMoves();
     openCardsMatch(); // Check if cards Match
 
   }
