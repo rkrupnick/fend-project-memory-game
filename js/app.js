@@ -1,3 +1,5 @@
+// TODO: Add nice animation for match and not match
+
 /*
  * Create a list that holds all of your card images
  */
@@ -51,6 +53,10 @@ function shuffle(array) {
  */
  let openCards = [];
 
+ function showImage(e) {
+  e.target.classList.add("open", "show"); // Add open and show class to clicked card
+ }
+
  function openCardsMatch() {
   if (openCards.length === 2) {
     if (openCards[0].children[0].classList.value === openCards[1].children[0].classList.value) {
@@ -58,7 +64,7 @@ function shuffle(array) {
     }  else {
     setTimeout(function() {
       hideUnmatchedCards();
-    }, 450)
+    }, 750)
   }
  }
 }
@@ -78,8 +84,7 @@ function shuffle(array) {
 
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
-    e.target.classList.add("open", "show"); // Add open and show class to clicked card
-    console.log(openCards);
+    showImage(e);
     openCards.unshift(e.target);    // Add clicked card to openCards array
 
     openCardsMatch(); // Check if cards Match
