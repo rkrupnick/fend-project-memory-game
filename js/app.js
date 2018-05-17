@@ -180,6 +180,10 @@ choices.addEventListener("click", function(e) {
       cardImages = starWarsImages;
       startAgain();
     }
+    else if (e.target.classList.value === "transportation choice") {
+      cardImages = transportationImages;
+      startAgain();
+    }
   }
  });
 
