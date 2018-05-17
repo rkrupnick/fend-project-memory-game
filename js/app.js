@@ -54,10 +54,9 @@ function shuffle(array) {
  function openCardsMatch() {
   if (openCards.length === 2) {
     if (openCards[0].children[0].classList.value === openCards[1].children[0].classList.value) {
-      console.log("match!");
       lockMatchedCards(openCards);
     } else {
-
+      hideUnmatchedCards();
     }
   }
  }
@@ -65,15 +64,23 @@ function shuffle(array) {
  function lockMatchedCards() {
   openCards[0].classList.add("match");
   openCards[1].classList.add("match");
+  openCards = [];
+
+ }
+
+ function hideUnmatchedCards() {
+  openCards[0].classList.remove("open", "show");
+  openCards[1].classList.remove("open", "show");
+  openCards = [];
  }
 
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     e.target.classList.add("open", "show"); // Add open and show class to clicked card
-
+    console.log(openCards);
     openCards.unshift(e.target);    // Add clicked card to openCards array
 
-    openCardsMatch();
+    openCardsMatch(); // Check if cards Match
 
   }
  });
