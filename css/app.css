@@ -131,4 +131,5 @@ h2 {
     padding: 15px;
     border-radius: 10px;
     text-align: center;
+    cursor: pointer;
 }

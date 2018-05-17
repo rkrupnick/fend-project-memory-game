@@ -7,6 +7,13 @@ const standardImages = ["fa-gem", "fa-gem", "fa-paper-plane", "fa-paper-plane",
   "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf",
   "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
 
+const starWarsImages = ["fa-mandalorian", "fa-mandalorian", "fa-old-republic", "fa-old-republic",
+  "fa-rebel", "fa-rebel", "fa-sith", "fa-sith", "fa-galactic-senate", "fa-galactic-senate", "fa-galactic-republic",
+  "fa-galactic-republic", "fa-empire", "fa-empire", "fa-first-order", "fa-first-order"];
+
+const transportationImages = ["fa-ambulance", "fa-ambulance", "fa-bus", "fa-bus",
+  "fa-car", "fa-car", "fa-fighter-jet", "fa-fighter-jet", "fa-helicopter", "fa-helicopter", "fa-space-shuttle",
+  "fa-space-shuttle", "fa-subway", "fa-subway", "fa-taxi", "fa-taxi"];
 /*
 * Create array from card deck in HTML
 */
@@ -15,6 +22,7 @@ const cards = Array.from(deck);
 const moves = document.querySelector(".moves");
 const stars = document.querySelector(".stars");
 const restart = document.querySelector(".restart");
+const choices = document.querySelector("#choices");
 
 let openCards = [];
 let moveCounter = 0;
@@ -130,6 +138,21 @@ function checkWin() {
   stars.children[1].children[0].classList.add("fa");
  }
 
+ function startAgain() {
+  for (let i=0; i<cards.length; i++) {
+    if (cardImages === starWarsImages) {
+      cards[i].children[0].classList = "fab";
+    } else {
+    cards[i].children[0].classList = "fa";
+  }
+    cards[i].classList = "card";
+  }
+  moveCounter = 0;
+  moves.innerText = moveCounter;
+  resetStars();
+  startGame();
+ }
+
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     showImage(e);
@@ -140,13 +163,17 @@ function checkWin() {
  });
 
  restart.addEventListener("click", function() {
-  for (let i=0; i<cards.length; i++) {
-    cards[i].children[0].classList = "fa";
-    cards[i].classList = "card";
-  }
-  moveCounter = 0;
-  moves.innerText = moveCounter;
-  resetStars();
-  startGame();
+  startAgain();
  })
 
+choices.addEventListener("click", function(e) {
+  if(e.target && e.target.nodeName == "LI") {
+    if (e.target.classList.value === "standard choice") {
+      cardImages = standardImages;
+      startAgain();
+    } else if (e.target.classList.value === "star-wars choice") {
+      cardImages = starWarsImages;
+      startAgain();
+    }
+  }
+ });
