@@ -10,13 +10,15 @@ const cardImages = ["fa-diamond", "fa-diamond", "fa-paper-plane-o", "fa-paper-pl
 /*
 * Create array from card deck in HTML
 */
-const deck = document.querySelectorAll('.card');
+const deck = document.querySelectorAll(".card");
 const cards = Array.from(deck);
-const moves = document.querySelector('.moves');
+const moves = document.querySelector(".moves");
+const stars = document.querySelector(".stars");
 
 let openCards = [];
 let moveCounter = 0;
 let matchCounter = 0;
+let numberStars = 3;
 
 /*
  * Display the cards on the page
@@ -98,6 +100,19 @@ function checkWin() {
  function updateMoves() {
   moveCounter += 1;
   moves.innerText = moveCounter;
+  if (moveCounter === 21) {
+    numberStars = 2;
+    removeStar(0);
+  }
+  else if (moveCounter === 31) {
+    numberStars = 1;
+    removeStar(1);
+  }
+ }
+
+ function removeStar(star) {
+  stars.children[star].children[0].classList.remove("fa");
+  stars.children[star].children[0].classList.add("far");
  }
 
  document.getElementById("deck").addEventListener("click", function(e) {
@@ -108,3 +123,5 @@ function checkWin() {
     openCardsMatch(); // Check if cards Match
   }
  });
+
+ // 3 stars 20 moves, 2 less than 30
