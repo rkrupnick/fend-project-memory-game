@@ -123,6 +123,13 @@ function checkWin() {
   stars.children[star].children[0].classList.add("far");
  }
 
+ function resetStars() {
+  stars.children[0].children[0].classList.remove("far");
+  stars.children[0].children[0].classList.add("fa");
+  stars.children[1].children[0].classList.remove("far");
+  stars.children[1].children[0].classList.add("fa");
+ }
+
  document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     showImage(e);
@@ -133,6 +140,13 @@ function checkWin() {
  });
 
  restart.addEventListener("click", function() {
-  console.log("restart");
+  for (let i=0; i<cards.length; i++) {
+    cards[i].children[0].classList = "fa";
+    cards[i].classList = "card";
+  }
+  moveCounter = 0;
+  moves.innerText = moveCounter;
+  resetStars();
+  startGame();
  })
 
