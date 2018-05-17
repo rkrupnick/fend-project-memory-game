@@ -133,11 +133,11 @@ function hideUnmatchedCards() {
 function updateMoves() {
   moveCounter += 1;
   moves.innerText = moveCounter;
-  if (moveCounter === 21) {
+  if (moveCounter === 25) {
     numberStars = 2;
     removeStar(0);
   }
-  else if (moveCounter === 31) {
+  else if (moveCounter === 35) {
     numberStars = 1;
     removeStar(1);
   }
@@ -156,6 +156,7 @@ function resetStars() {
 }
 
 function startAgain() {
+  // Fix classes for cards
   for (let i=0; i<cards.length; i++) {
     if (cardImages === starWarsImages) {
       cards[i].children[0].classList = "fab";
@@ -167,23 +168,26 @@ function startAgain() {
   moveCounter = 0;
   moves.innerText = moveCounter;
   matchCounter = 0;
-  resetStars();
-  startGame();
+  resetStars(); // Resets stars to three
+  startGame();  // Starts game over by shuffling cards
 }
 
 document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     showImage(e);
     openCards.unshift(e.target);    // Add clicked card to openCards array
-    updateMoves();
-    openCardsMatch(); // Check if cards Match
+    updateMoves();                  // Update number of moves
+    openCardsMatch();               // Check if cards Match
   }
 });
 
+// When the user clicks the restart button, game restarts
 restart.addEventListener("click", function() {
   startAgain();
 })
 
+
+// Allow the user to choose from three different decks of cards
 choices.addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     if (e.target.classList.value === "standard choice") {
