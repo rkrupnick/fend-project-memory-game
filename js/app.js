@@ -23,6 +23,9 @@ const moves = document.querySelector(".moves");
 const stars = document.querySelector(".stars");
 const restart = document.querySelector(".restart");
 const choices = document.querySelector("#choices");
+const close = document.querySelector(".close");
+const modal = document.getElementById("modal");
+const endGame = document.querySelector(".end-game");
 
 let openCards = [];
 let moveCounter = 0;
@@ -96,7 +99,8 @@ function shuffle(array) {
 
 function checkWin() {
   if (matchCounter === 8) {
-    alert(`You won! It took you ${moveCounter} turns! You finished with ${numberStars} stars!`);
+    endGame.innerText = `You won! It took you ${moveCounter} turns! You finished with ${numberStars} stars!`;
+    modal.style.display = "block";
   }
 }
 
@@ -177,3 +181,8 @@ choices.addEventListener("click", function(e) {
     }
   }
  });
+
+// To close the modal
+close.addEventListener("click", function() {
+  modal.style.display = "none";
+})
