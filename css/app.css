@@ -82,6 +82,39 @@ h1 {
 }
 
 /*
+*  Matching Animations from w3schools.com
+*/
+
+/* The animation code */
+@keyframes wrong-match {
+    from {background-color: #2e3d49;}
+    to {background-color: red;}
+}
+
+/* The element to apply the animation to */
+.wrong {
+    animation-name: wrong-match;
+    animation-duration: 0.5s;
+}
+
+@keyframes right-match {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.right {
+    animation-name: right-match;
+    animation-duration: 1s;
+}
+
+/*
  * Styles for the Score Panel
  */
 

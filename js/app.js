@@ -114,6 +114,8 @@ function openCardsMatch() {
       lockMatchedCards(openCards);
       matchCounter += 1;
     }  else {
+      openCards[0].classList.add("wrong");
+      openCards[1].classList.add("wrong");
       setTimeout(function() {
       hideUnmatchedCards();
     }, 750)
@@ -131,14 +133,14 @@ function checkWin() {
 }
 
 function lockMatchedCards() {
-  openCards[0].classList.add("match");
-  openCards[1].classList.add("match");
+  openCards[0].classList.add("match", "right");
+  openCards[1].classList.add("match", "right");
   openCards = [];
 }
 
 function hideUnmatchedCards() {
-  openCards[0].classList.remove("open", "show");
-  openCards[1].classList.remove("open", "show");
+  openCards[0].classList.remove("open", "show", "wrong");
+  openCards[1].classList.remove("open", "show", "wrong");
   openCards = [];
 }
 
