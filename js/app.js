@@ -50,6 +50,7 @@ function startGame() {
   shuffle(cardImages);
   addImagestoCards();
   start = new Date();
+  timer();
 }
 
 function addImagestoCards() {
@@ -108,6 +109,7 @@ function checkTime() {
   let end = new Date();
   let time = end - start;
   seconds = Math.floor(time/1000);
+  document.querySelector(".timer").innerHTML = seconds;
 }
 
 function checkWin() {
@@ -218,3 +220,12 @@ no.addEventListener("click", function() {
 yes.addEventListener("click", function() {
   startAgain();
 })
+
+// Display timer
+function timer() {
+  const x = setInterval(function() {
+    let now = new Date().getTime();
+    let elapsedTime = Math.floor((now - start)/1000);
+    document.querySelector(".timer").innerHTML = elapsedTime;
+  }, 1000)
+}

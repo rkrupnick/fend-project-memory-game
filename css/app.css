@@ -101,11 +101,16 @@ h1 {
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
+    float: left;
 }
 
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+
+.time {
+    margin: 5px;
 }
 
 /*
