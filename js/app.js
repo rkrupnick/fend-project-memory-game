@@ -217,18 +217,18 @@ choices.addEventListener('click', function(e) {
 
 // To close the modal if user clicks on 'x'
 close.addEventListener('click', function() {
-  modal.style.display = 'none';
+  modal.classList.remove('visible');
 });
 
 // To close the modal if user clicks on 'no'
 no.addEventListener('click', function() {
-  modal.style.display = 'none';
+  modal.classList.remove('visible');
 });
 
 // To restart from modal
 yes.addEventListener('click', function() {
   startAgain();
-  modal.style.display = 'none';
+  modal.classList.remove('visible');
 });
 
 // Display timer
