@@ -112,8 +112,8 @@ function openCardsMatch() {
       lockMatchedCards(openCards);
       matchCounter += 1;
     }  else {
-      openCards[0].classList.add('wrong', 'rubberBand');
-      openCards[1].classList.add('wrong', 'rubberBand');
+      openCards[0].classList.add('wrong');
+      openCards[1].classList.add('wrong');
       setTimeout(function() {
       hideUnmatchedCards();
     }, 750);
@@ -137,8 +137,8 @@ function lockMatchedCards() {
 }
 
 function hideUnmatchedCards() {
-  openCards[0].classList.remove('open', 'show', 'wrong', 'rubberBand');
-  openCards[1].classList.remove('open', 'show', 'wrong', 'rubberBand');
+  openCards[0].classList.remove('open', 'show', 'wrong');
+  openCards[1].classList.remove('open', 'show', 'wrong');
   openCards = [];
 }
 
