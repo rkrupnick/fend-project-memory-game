@@ -51,6 +51,7 @@ let interval,
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
+startGame();
 
 function startGame() {
   shuffle(cardImages);
