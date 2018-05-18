@@ -60,7 +60,9 @@ function startGame() {
   addImagestoCards();
   start = new Date();
   timer();
-  document.getElementById("deck").addEventListener("click", function(e) {
+}
+
+ document.getElementById("deck").addEventListener("click", function(e) {
   if(e.target && e.target.nodeName == "LI") {
     showImage(e);
     openCards.unshift(e.target);    // Add clicked card to openCards array
@@ -68,7 +70,6 @@ function startGame() {
     openCardsMatch();               // Check if cards Match
   }
 });
-}
 
 function addImagestoCards() {
   for (let i=0; i<cards.length; i++) {
@@ -224,6 +225,7 @@ no.addEventListener("click", function() {
 // To restart from modal
 yes.addEventListener("click", function() {
   startAgain();
+  modal.style.display = "none;
 })
 
 // Display timer
