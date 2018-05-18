@@ -24,26 +24,26 @@ const transportationImages = [
 /*
 * Create array from card deck in HTML
 */
-const deck = document.querySelectorAll('.card');
-const cards = Array.from(deck);
-const moves = document.querySelector('.moves');
-const stars = document.querySelector('.stars');
-const restart = document.querySelector('.restart');
-const choices = document.querySelector('#choices');
-const close = document.querySelector('.close');
-const modal = document.getElementById('modal');
-const endGame = document.querySelector('.end-game');
-const no = document.querySelector('.no');
-const yes = document.querySelector('.yes');
+const deck = document.querySelectorAll('.card'),
+      cards = Array.from(deck),
+      moves = document.querySelector('.moves'),
+      stars = document.querySelector('.stars'),
+      restart = document.querySelector('.restart'),
+      choices = document.querySelector('#choices'),
+      close = document.querySelector('.close'),
+      modal = document.getElementById('modal'),
+      endGame = document.querySelector('.end-game'),
+      no = document.querySelector('.no'),
+      yes = document.querySelector('.yes');
 
-let interval;
-let elapsedTime;
-let openCards = [];
-let moveCounter = 0;
-let matchCounter = 0;
-let numberStars = 3;
-let cardImages = standardImages;
-let start;
+let interval,
+    elapsedTime,
+    openCards = [],
+    moveCounter = 0,
+    matchCounter = 0,
+    numberStars = 3,
+    cardImages = standardImages,
+    start;
 
 /*
  * Display the cards on the page
