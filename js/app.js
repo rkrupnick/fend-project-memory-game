@@ -3,18 +3,26 @@
 /*
  * Create a list that holds all of your card images
  */
-const standardImages = ["fa-gem", "fa-gem", "fa-paper-plane", "fa-paper-plane",
-  "fa-anchor", "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf",
-  "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"];
+const standardImages = [
+  "fa-gem", "fa-gem", "fa-paper-plane", "fa-paper-plane", "fa-anchor",
+  "fa-anchor", "fa-bolt", "fa-bolt", "fa-cube", "fa-cube", "fa-leaf",
+  "fa-leaf", "fa-bicycle", "fa-bicycle", "fa-bomb", "fa-bomb"
+  ];
 
-const starWarsImages = ["fa-mandalorian", "fa-mandalorian", "fa-old-republic",
-  "fa-old-republic", "fa-rebel", "fa-rebel", "fa-sith", "fa-sith", "fa-galactic-senate",
-  "fa-galactic-senate", "fa-galactic-republic", "fa-galactic-republic", "fa-empire",
-  "fa-empire", "fa-first-order", "fa-first-order"];
+const starWarsImages = [
+  "fa-mandalorian", "fa-mandalorian", "fa-old-republic",
+  "fa-old-republic", "fa-rebel", "fa-rebel", "fa-sith", "fa-sith",
+  "fa-galactic-senate", "fa-galactic-senate", "fa-galactic-republic",
+  "fa-galactic-republic", "fa-empire", "fa-empire", "fa-first-order",
+  "fa-first-order"
+  ];
 
-const transportationImages = ["fa-ambulance", "fa-ambulance", "fa-bus", "fa-bus",
-  "fa-car", "fa-car", "fa-fighter-jet", "fa-fighter-jet", "fa-helicopter", "fa-helicopter",
-  "fa-space-shuttle", "fa-space-shuttle", "fa-subway", "fa-subway", "fa-taxi", "fa-taxi"];
+const transportationImages = [
+  "fa-ambulance", "fa-ambulance", "fa-bus", "fa-bus", "fa-car", "fa-car",
+  "fa-fighter-jet", "fa-fighter-jet", "fa-helicopter", "fa-helicopter",
+  "fa-space-shuttle", "fa-space-shuttle", "fa-subway", "fa-subway", "fa-taxi", "fa-taxi"
+  ];
+
 /*
 * Create array from card deck in HTML
 */
@@ -44,7 +52,6 @@ let start;
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
-startGame();
 
 function startGame() {
   shuffle(cardImages);
