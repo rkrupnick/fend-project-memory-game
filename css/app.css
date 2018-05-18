@@ -222,6 +222,8 @@ h2 {
     padding: 20px;
     border: 1px solid #888;
     width: 60%;
+    border-radius: 10%;
+    border: 4px solid #aa7ecd;
 }
 
 .visible {
@@ -249,7 +251,10 @@ h2 {
 .yes,
 .no {
     margin: 5px;
-
+    padding: 5px;
+    background-color: #aa7ecd;
+    font-size: .8em;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 650px) {
