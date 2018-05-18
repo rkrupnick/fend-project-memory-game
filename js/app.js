@@ -43,6 +43,7 @@ let interval,
     matchCounter = 0,
     numberStars = 3,
     cardImages = standardImages,
+    checkCards = [],
     start;
 
 /*
@@ -116,6 +117,10 @@ function openCardsMatch() {
     }  else {
       openCards[0].classList.add('wrong');
       openCards[1].classList.add('wrong');
+      checkCards = openCards;
+      console.log(checkCards);
+      openCards = [];
+      console.log(checkCards, openCards);
       setTimeout(function() {
       hideUnmatchedCards();
     }, 750);
@@ -139,9 +144,9 @@ function lockMatchedCards() {
 }
 
 function hideUnmatchedCards() {
-  openCards[0].classList.remove('open', 'show', 'wrong');
-  openCards[1].classList.remove('open', 'show', 'wrong');
-  openCards = [];
+  checkCards[0].classList.remove('open', 'show', 'wrong');
+  checkCards[1].classList.remove('open', 'show', 'wrong');
+  checkCards = [];
 }
 
 function updateMoves() {
