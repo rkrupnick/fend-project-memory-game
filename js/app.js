@@ -38,6 +38,8 @@ const endGame = document.querySelector(".end-game");
 const no = document.querySelector(".no");
 const yes = document.querySelector(".yes");
 
+let interval;
+let elapsedTime;
 let openCards = [];
 let moveCounter = 0;
 let matchCounter = 0;
@@ -112,17 +114,10 @@ function openCardsMatch() {
  }
 }
 
-function checkTime() {
-  let end = new Date();
-  let time = end - start;
-  seconds = Math.floor(time/1000);
-  document.querySelector(".timer").innerHTML = seconds;
-}
-
 function checkWin() {
   if (matchCounter === 8) {
-    checkTime();
-    endGame.innerText = `You won! It took you ${moveCounter} turns! You finished in ${seconds} seconds, with ${numberStars} stars!`;
+    clearInterval(interval);
+    endGame.innerText = `You won! It took you ${moveCounter} turns! You finished in ${elapsedTime} seconds, with ${numberStars} stars!`;
     modal.style.display = "block";
   }
 }
@@ -230,9 +225,9 @@ yes.addEventListener("click", function() {
 
 // Display timer
 function timer() {
-  const x = setInterval(function() {
+  interval = setInterval(function() {
     let now = new Date().getTime();
-    let elapsedTime = Math.floor((now - start)/1000);
+    elapsedTime = Math.floor((now - start)/1000);
     document.querySelector(".timer").innerHTML = elapsedTime;
   }, 1000)
 }
