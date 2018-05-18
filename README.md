@@ -3,6 +3,7 @@
 ## Table of Contents
 
 * [How to Play](#how-to-play)
+* [Dependencies](#dependencies)
 
 ## How to Play
 
@@ -10,3 +11,8 @@
 2. Click on one card to reveal it
 3. Click on another card to reveal it
 4. Try to match all of the cards!
+
+## Dependencies
+
+Font Awesome
+Google Fonts
