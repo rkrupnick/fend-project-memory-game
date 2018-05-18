@@ -60,7 +60,7 @@ function startGame() {
 }
 
  document.getElementById('deck').addEventListener('click', function(e) {
-  if(e.target && e.target.nodeName == 'LI') {
+  if(e.target && e.target.nodeName == 'LI' && e.target.classList.value === "card") {
     showImage(e);
     openCards.unshift(e.target);    // Add clicked card to openCards array
     updateMoves();                  // Update number of moves
