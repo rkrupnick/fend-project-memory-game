@@ -60,6 +60,14 @@ function startGame() {
   addImagestoCards();
   start = new Date();
   timer();
+  document.getElementById("deck").addEventListener("click", function(e) {
+  if(e.target && e.target.nodeName == "LI") {
+    showImage(e);
+    openCards.unshift(e.target);    // Add clicked card to openCards array
+    updateMoves();                  // Update number of moves
+    openCardsMatch();               // Check if cards Match
+  }
+});
 }
 
 function addImagestoCards() {
@@ -176,14 +184,7 @@ function startAgain() {
   startGame();  // Starts game over by shuffling cards
 }
 
-document.getElementById("deck").addEventListener("click", function(e) {
-  if(e.target && e.target.nodeName == "LI") {
-    showImage(e);
-    openCards.unshift(e.target);    // Add clicked card to openCards array
-    updateMoves();                  // Update number of moves
-    openCardsMatch();               // Check if cards Match
-  }
-});
+
 
 // When the user clicks the restart button, game restarts
 restart.addEventListener("click", function() {
