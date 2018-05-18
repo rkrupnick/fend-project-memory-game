@@ -61,7 +61,8 @@ function startGame() {
 }
 
  document.getElementById('deck').addEventListener('click', function(e) {
-  if(e.target && e.target.nodeName == 'LI' && e.target.classList.value === "card") {
+  if(e.target && e.target.nodeName == 'LI' && (e.target.classList.value === 'card' ||
+    e.target.classList.value === 'card star-wars' || e.target.classList.value === 'card transportation')) {
     showImage(e);
     openCards.unshift(e.target);    // Add clicked card to openCards array
     updateMoves();                  // Update number of moves
@@ -173,10 +174,13 @@ function startAgain() {
   for (let i=0; i<cards.length; i++) {
     if (cardImages === starWarsImages) {
       cards[i].children[0].classList = 'fab';
+      cards[i].classList.add('star-wars');
+    } else if (cardImages === transportationImages) {
+      cards[i].classList.add('transportation');
     } else {
-    cards[i].children[0].classList = 'fa';
+      cards[i].children[0].classList = 'fa';
+      cards[i].classList = 'card';
     }
-    cards[i].classList = 'card';
   }
   moveCounter = 0;
   moves.innerText = moveCounter;
