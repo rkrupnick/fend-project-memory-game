@@ -89,12 +89,29 @@ h1 {
 @keyframes wrong-match {
     from {background-color: #2e3d49;}
     to {background-color: red;}
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
 }
 
 /* The element to apply the animation to */
 .wrong {
     animation-name: wrong-match;
-    animation-duration: 0.5s;
+    animation-duration: 1.5s;
 }
 
 @keyframes right-match {
@@ -151,7 +168,7 @@ h1 {
  */
 
 h2 {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 #choices {
