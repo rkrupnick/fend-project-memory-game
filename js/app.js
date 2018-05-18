@@ -182,6 +182,7 @@ function startAgain() {
       cards[i].classList = 'card star-wars';
     } else if (cardImages === transportationImages) {
       cards[i].classList = ('card transportation');
+      cards[i].children[0].classList = 'fa';
     } else {
       cards[i].children[0].classList = 'fa';
       cards[i].classList = 'card';
