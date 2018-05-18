@@ -174,14 +174,15 @@ function startAgain() {
   for (let i=0; i<cards.length; i++) {
     if (cardImages === starWarsImages) {
       cards[i].children[0].classList = 'fab';
-      cards[i].classList.add('star-wars');
+      cards[i].classList = 'card star-wars';
     } else if (cardImages === transportationImages) {
-      cards[i].classList.add('transportation');
+      cards[i].classList = ('card transportation');
     } else {
       cards[i].children[0].classList = 'fa';
       cards[i].classList = 'card';
     }
   }
+  openCards = [];
   moveCounter = 0;
   moves.innerText = moveCounter;
   matchCounter = 0;
