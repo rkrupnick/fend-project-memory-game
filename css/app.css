@@ -213,6 +213,10 @@ h2 {
     width: 60%;
 }
 
+.visible {
+    display: block;
+}
+
 .close {
     color: #aaa;
     float: right;

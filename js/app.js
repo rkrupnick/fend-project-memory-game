@@ -126,7 +126,7 @@ function checkWin() {
   if (matchCounter === 8) {
     clearInterval(interval);
     endGame.innerText = `You won! It took you ${moveCounter} turns! You finished in ${elapsedTime} seconds, with ${numberStars} stars!`;
-    modal.style.display = 'block';
+    modal.classList.add('visible');
   }
 }
 
