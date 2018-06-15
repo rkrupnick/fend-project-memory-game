@@ -7,6 +7,10 @@
 
 ## How to Play
 
+### [Play Online](https://rkrupnick.github.io/fend-project-memory-game/)
+
+### Or Download
+
 1. Download game as a .zip file
 2. Unzip file on your computer
 3. Double-click the index.html file to open the game in your browser
